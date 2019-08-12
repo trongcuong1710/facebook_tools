@@ -34,3 +34,13 @@ func (s *ConfigSuite) TestGetPageID_DoesNotHaveValue_ReturnEmptyString() {
 	os.Setenv(pageID, "")
 	s.Empty(GetPageID())
 }
+
+func (s *ConfigSuite) TestGetExportDirectory_HasValue_ReturnValue() {
+	os.Setenv(exportDirectory, "test_directory")
+	s.Equal("test_directory", GetExportDirectory())
+}
+
+func (s *ConfigSuite) TestGetExportDirectory_DoesNotHaveValue_ReturnEmptyString() {
+	os.Setenv(exportDirectory, "")
+	s.Empty(GetExportDirectory())
+}
