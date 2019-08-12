@@ -57,5 +57,5 @@ func (c *clientImpl) buildGetCommentsURL(postID string) string {
 	accessToken := config.GetFBAppToken()
 	pageID := config.GetPageID()
 	url := c.buildRequestURL(strings.ReplaceAll(path, postIDPlaceHolder, pageID+"_"+postID))
-	return url + accessToken
+	return url + accessToken + "&filter=stream&limit=1000"
 }
